@@ -12,7 +12,7 @@ class Main extends eui.UILayer {
     private redParticle: particle.GravityParticleSystem;
     private container: egret.DisplayObjectContainer;
     private rectShape: egret.Shape;
-
+    private dialog = new Dialog();
 
     protected createChildren(): void {
         super.createChildren();
@@ -94,7 +94,23 @@ class Main extends eui.UILayer {
         this.createPrompt();
         // 红包雨
         this.createRedRain();
+        // Dialog
+        this.createDialog();
     }
+
+    private createDialog() {
+        const button = new eui.Button();
+        button.label = "自定义对话框";
+        button.width = 120;
+        button.height = 40;
+        button.x = 120;
+        button.y = 200;
+        this.addChild(button);
+        button.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {
+            this.dialog.show(this);
+        }, this);
+    }
+
 
     private createRedRain() {
         const button = new eui.Button();
