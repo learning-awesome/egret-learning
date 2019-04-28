@@ -1,6 +1,7 @@
 class Dialog extends eui.Component implements  eui.UIComponent {
     private timer: egret.Timer;
 
+    private btnClose: eui.Image;
 	private btnOk: eui.Button;
     private btnCancel: eui.Button;
     private dialog: eui.Group;
@@ -23,6 +24,10 @@ class Dialog extends eui.Component implements  eui.UIComponent {
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+        this.btnClose.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {
+            this.close();
+        }, this)
+
 		this.btnOk.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {
             this.close();
         }, this)
