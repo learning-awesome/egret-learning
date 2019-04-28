@@ -13,6 +13,7 @@ class Main extends eui.UILayer {
     private container: egret.DisplayObjectContainer;
     private rectShape: egret.Shape;
     private dialog = new Dialog();
+    private imageSlider = new ImageSlider();
 
     protected createChildren(): void {
         super.createChildren();
@@ -96,6 +97,21 @@ class Main extends eui.UILayer {
         this.createRedRain();
         // Dialog
         this.createDialog();
+        // ImageSlize
+        this.createImageSlider();
+    }
+
+    private createImageSlider() {
+        const button = new eui.Button();
+        button.label = "图片滚动";
+        button.width = 120;
+        button.height = 40;
+        button.x = 250;
+        button.y = 200;
+        this.addChild(button);
+        button.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {
+            this.imageSlider.init(this);
+        }, this);
     }
 
     private createDialog() {

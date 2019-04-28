@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin width="640" height="200" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+    <ns1:ScrollView id="scrollView" height="200" width="640"   top="300">
+        <e:Group height="100%" width="2560">
+            <e:layout>
+                <e:HorizontalLayout gap="0" />
+            </e:layout>
+            <e:Image width="640" height="200" source="red_bg_jpg"></e:Image>
+            <e:Image width="640" height="200" source="bg_jpg"></e:Image>
+            <e:Image width="640" height="200" source="red_bg_jpg"></e:Image>
+            <e:Image width="640" height="200" source="bg_jpg"></e:Image>
+        </e:Group>
+    </ns1:ScrollView>
+</e:Skin>
